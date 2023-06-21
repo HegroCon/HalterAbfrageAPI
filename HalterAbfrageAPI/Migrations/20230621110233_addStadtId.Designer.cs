@@ -4,6 +4,7 @@ using HalterAbfrageAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HalterAbfrageAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230621110233_addStadtId")]
+    partial class addStadtId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +80,7 @@ namespace HalterAbfrageAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StadtPlz");
+                    b.HasIndex("StadtId");
 
                     b.ToTable("Personen");
                 });
@@ -116,7 +118,7 @@ namespace HalterAbfrageAPI.Migrations
                 {
                     b.HasOne("HalterAbfrageAPI.Models.Stadt", "Stadt")
                         .WithMany()
-                        .HasForeignKey("StadtPlz")
+                        .HasForeignKey("StadtId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
