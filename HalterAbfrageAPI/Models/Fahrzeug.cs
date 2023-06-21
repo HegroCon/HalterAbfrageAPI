@@ -16,6 +16,5 @@ namespace HalterAbfrageAPI.Models
         [Column(TypeName = "varchar(100)")]
         public string Farbe { get; set; }
         public Person Person { get; set; }
-
     }
 }

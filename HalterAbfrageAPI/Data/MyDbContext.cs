@@ -9,6 +9,7 @@ namespace HalterAbfrageAPI.Data
     {
         public DbSet<Person> Personen { get; set; }
         public DbSet<Fahrzeug> Fahrzeuge { get; set; }
+        public DbSet<Stadt> Stadt { get; set; }
 
 
         //public MyDbContext(string connectionString) : base(connectionString) { }
