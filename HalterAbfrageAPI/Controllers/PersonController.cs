@@ -15,7 +15,6 @@ namespace HalterAbfrageAPI.Controllers
         public async Task<ActionResult<List<Person>>> GetPersonen()
         {
             return Ok(await _context.Personen
-                .Include(f => f.fahrzeuge)
                 .ToListAsync());
         }
 
@@ -23,7 +22,6 @@ namespace HalterAbfrageAPI.Controllers
         public async Task<ActionResult<List<Person>>> GetPersonById(int id)
         {
             var person = await _context.Personen
-                .Include(p => p.fahrzeuge)
                 .FirstOrDefaultAsync(p => p.Id == id);
             if (person == null)
                 return NotFound();
@@ -36,8 +34,6 @@ namespace HalterAbfrageAPI.Controllers
             if (!await _context.Personen.AnyAsync(p => p.Id == person.Id))
                 return BadRequest("Invalid Person");
 
-            person.fahrzeuge = null;
-
             _context.Personen.Add(person);
             await _context.SaveChangesAsync();
 
@@ -48,8 +44,6 @@ namespace HalterAbfrageAPI.Controllers
         {
             if (!await _context.Personen.AnyAsync(p => p.Id == person.Id))
                 return BadRequest("Invalid Person");
-
-            person.fahrzeuge = null;
 
             if (await _context.Personen.ContainsAsync(person))
             {
