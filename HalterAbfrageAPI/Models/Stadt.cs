@@ -11,7 +11,6 @@ namespace HalterAbfrageAPI.Models
         [Column(TypeName = "varchar(50)")]
         public string Bundesland { get; set; }
 
-        List <Person> Personen { get; set; }
 
     }
 }

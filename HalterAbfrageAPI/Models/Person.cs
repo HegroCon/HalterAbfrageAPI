@@ -16,6 +16,5 @@ namespace HalterAbfrageAPI.Models
         public DateTime Birthday { get; set; }
 
         public Stadt Stadt { get; set; }
-        public List<Fahrzeug> fahrzeuge;
     }
 }
