@@ -29,7 +29,7 @@ namespace HalterAbfrageAPI.Controllers
         [HttpGet("{kennzeichen}")]
         public async Task<ActionResult<List<Fahrzeug>>> GetFahrzeug(string kennzeichen)
         {
-            var fahrzeug = _service.GetFahrzeugByKennzeichen(kennzeichen);
+            var fahrzeug = await _service.GetFahrzeugByKennzeichen(kennzeichen);
 
             if (fahrzeug == null)
                 return NotFound();
