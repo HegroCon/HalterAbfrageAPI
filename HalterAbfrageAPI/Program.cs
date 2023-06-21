@@ -1,4 +1,5 @@
 using HalterAbfrageAPI.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,13 +11,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .Build();
+builder.Services.AddDbContext<MyDbContext>((opt) =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContextConnectionString"));
+});
 
-var connectionString = configuration.GetConnectionString("MyDbContextConnectionString");
-builder.Services.AddTransient<MyDbContext>(_ => new MyDbContext(connectionString));
+//var configuration = new ConfigurationBuilder()
+//    .SetBasePath(builder.Environment.ContentRootPath)
+//    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+//    .Build();
+
+//var connectionString = configuration.GetConnectionString("MyDbContextConnectionString");
+//builder.Services.AddTransient<MyDbContext>(_ => new MyDbContext(connectionString));
 
 var app = builder.Build();
 
