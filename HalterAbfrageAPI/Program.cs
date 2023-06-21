@@ -1,3 +1,4 @@
+using HalterAbfrageAPI;
 using HalterAbfrageAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<IHalterAbfrageService, HalterAbfrageService>();
 
 builder.Services.AddDbContext<MyDbContext>((opt) =>
 {

@@ -10,10 +10,12 @@ namespace HalterAbfrageAPI.Controllers
     public class FahrzeugController : ControllerBase
     {
         private readonly MyDbContext _context;
+        private readonly IHalterAbfrageService _service;
 
-        public FahrzeugController(MyDbContext context)
+        public FahrzeugController(MyDbContext context, IHalterAbfrageService service)
         {
             _context = context;
+            _service = service;
         }
         
         [HttpGet]
@@ -27,10 +29,8 @@ namespace HalterAbfrageAPI.Controllers
         [HttpGet("{kennzeichen}")]
         public async Task<ActionResult<List<Fahrzeug>>> GetFahrzeug(string kennzeichen)
         {
-            var fahrzeug = await _context.Fahrzeuge
-                .Include(e => e.Person)
-                .Include(p => p.Person.Stadt)
-                .FirstOrDefaultAsync(e => e.Kennzeichen == kennzeichen);
+            var fahrzeug = _service.GetFahrzeugByKennzeichen(kennzeichen);
+
             if (fahrzeug == null)
                 return NotFound();
             return Ok(fahrzeug);
