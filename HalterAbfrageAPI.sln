@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalterAbfrageAPI", "HalterAbfrageAPI\HalterAbfrageAPI.csproj", "{15C4CF13-1CE5-4447-B3C9-9BC8BD0CF323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HalterAbfrageAPI", "HalterAbfrageAPI\HalterAbfrageAPI.csproj", "{15C4CF13-1CE5-4447-B3C9-9BC8BD0CF323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FahrzeugHalterTest", "FahrzeugHalterTest\FahrzeugHalterTest.csproj", "{2EF4A1E7-11F2-4BE1-9479-CE0B2FF84810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{15C4CF13-1CE5-4447-B3C9-9BC8BD0CF323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15C4CF13-1CE5-4447-B3C9-9BC8BD0CF323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15C4CF13-1CE5-4447-B3C9-9BC8BD0CF323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF4A1E7-11F2-4BE1-9479-CE0B2FF84810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF4A1E7-11F2-4BE1-9479-CE0B2FF84810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF4A1E7-11F2-4BE1-9479-CE0B2FF84810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF4A1E7-11F2-4BE1-9479-CE0B2FF84810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
