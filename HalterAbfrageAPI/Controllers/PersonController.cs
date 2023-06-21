@@ -10,7 +10,10 @@ namespace HalterAbfrageAPI.Controllers
     public class PersonController : ControllerBase
     {
         private readonly MyDbContext _context;
-        
+        public PersonController(MyDbContext context)
+        {
+            _context = context;
+        }
         [HttpGet]
         public async Task<ActionResult<List<Person>>> GetPersonen()
         {
