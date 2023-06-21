@@ -6,7 +6,6 @@
         public string Name { get; set; }
         public string Bundesland { get; set; }
 
-        List <Person> Personen { get; set; }
 
     }
 }
