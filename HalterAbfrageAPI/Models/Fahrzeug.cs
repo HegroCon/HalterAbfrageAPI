@@ -6,6 +6,7 @@
         public string Marke { get; set; }
         public string Kategory { get; set; }
         public string Farbe { get; set; }
+        public Person Person { get; set; }
 
     }
 }

@@ -7,5 +7,7 @@
         public string Vorname { get; set; }
         public string StrasseHausnummer { get; set; }
         public DateTime Birthday { get; set; }
+        public Stadt Stadt { get; set; }
+        public List<Fahrzeug> fahrzeuge;
     }
 }
