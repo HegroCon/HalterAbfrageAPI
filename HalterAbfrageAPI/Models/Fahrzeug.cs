@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HalterAbfrageAPI.Models
 {
     public class Fahrzeug
     {
+        [Key]
         [Column(TypeName = "varchar(15)")]
         public string Kennzeichen { get; set; }
         [Column(TypeName = "varchar(MAX)")]
