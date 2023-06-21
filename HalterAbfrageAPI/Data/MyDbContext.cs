@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Security.Principal;
 using HalterAbfrageAPI.Models;
+using System.Runtime.CompilerServices;
 
 namespace HalterAbfrageAPI.Data
 {
@@ -9,7 +10,13 @@ namespace HalterAbfrageAPI.Data
         public DbSet<Person> Personen { get; set; }
         public DbSet<Fahrzeug> Fahrzeuge { get; set; }
 
+
+        //public MyDbContext(string connectionString) : base(connectionString) { }
+
         public MyDbContext(DbContextOptions options) : base(options) { }
+        public MyDbContext() { }
+
+
 
     }
 }
