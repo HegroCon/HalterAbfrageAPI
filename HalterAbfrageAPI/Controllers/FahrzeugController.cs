@@ -29,7 +29,7 @@ namespace HalterAbfrageAPI.Controllers
         {
             var fahrzeug = await _context.Fahrzeuge
                 .Include(e => e.Person)
-                
+                .Include(p => p.Person.Stadt)
                 .FirstOrDefaultAsync(e => e.Kennzeichen == kennzeichen);
             if (fahrzeug == null)
                 return NotFound();
